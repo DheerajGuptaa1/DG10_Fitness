@@ -103,7 +103,7 @@ body{ font-family: open-sans;
     .flex{ display: flex; justify-content: space-between;}
     .align-center{ align-items: center;}
 
-    .wrap-1{ background: url(../img/bg-1.jpg) no-repeat center center/cover; position: relative; background-attachment: fixed;transition: 300ms;}
+    .wrap-1{ background: url(/img/bg-1.jpg) no-repeat center center/cover; position: relative; background-attachment: fixed;transition: 300ms;}
     .wrap-1 h1.bold{ font-size: 24px; line-height: 30px; color: #fff; margin: 30px 20px;}
     .wrap-1 h1 span{ color: #fa7c30;}
    .wrap-1 .flex {justify-content: space-between;}
