@@ -103,8 +103,8 @@ body{ font-family: open-sans;
     .flex{ display: flex; justify-content: space-between;}
     .align-center{ align-items: center;}
 
-    .wrap-1{ background: url(./img/bg-1.jpg) no-repeat center center/cover; position: relative; background-attachment: fixed;transition: 300ms;}
-    .wrap-1 h1.bold{ font-size: 24px; line-height: 30px; color: #fff; margin: 30px 20px;}
+    .wrap-1{ background: url(../img/bg-1.jpg) no-repeat center center/cover; position: relative; background-attachment: fixed;transition: 300ms;}
+    .wrap-1 h1.bold{ font-size: 24px; line-height: 40px; color: #fff; margin: 20px 15px;}
     .wrap-1 h1 span{ color: #fa7c30;}
    .wrap-1 .flex {justify-content: space-between;}
 
@@ -112,16 +112,20 @@ body{ font-family: open-sans;
     nav ul li a{ color: white; display: block; padding: 8px 12px; border-bottom: 2px solid transparent; }
     nav ul li a.active{ border-bottom-color: #fff;}
     .wrap-1 header{background-color: rgba(202, 60, 60,0.7); position: fixed; top: 0px; left: 0; right: 0; z-index: 100;}
-    .wrap-1 header nav{ margin: 30px 20px;}
+    .wrap-1 header nav{ margin: 20px 15px;}
     .wrap-1 header .nav{ margin: 30px 20px; margin-left: 0;}
     
 
-    .btn{ width: auto; height:35px;
-        background: brown; color: #fff;
+    .btn{width: auto;
+        height: 30px;
+        background: brown;
+        color: #fff;
         border-radius: 5px;
         text-align: center;
-        padding: 6px 12px; margin: 10px 7px;
-        display: inline-block; vertical-align: bottom;
+        padding: 3px 6px;
+        margin: 5px 5px;
+        display: inline-block;
+        vertical-align: bottom;
         }
     .btn:hover{ background: #ccc; color: brown; }
     .btn:active{ background: brown; color: #fff; }
@@ -155,7 +159,7 @@ body{ font-family: open-sans;
 
 .wrap-2{ 
      background: url(../img/image.png) no-repeat center right;
-     background-color: #f1f4f6; padding-top: 370px;
+     background-color: #f1f4f6; padding-top: 480px;
      background-attachment: fixed;}
 .wrap-2 .col-5 h2{font-size: 36px; line-height: 30px; margin: 250px 0 10px;}
 
@@ -192,7 +196,7 @@ body{ font-family: open-sans;
 
 .wrap-6 { background: url(../img/bg-3.jpg) no-repeat center center/ cover;
     text-align: center;
-    background-attachment: fixed;}
+    }
 .wrap-6 .col-5 p{ font-size:18px; line-height:30px;  color: #fff; margin:130px 0 40px;}
 .wrap-6 .col-5 h3{ font-size: 38px; line-height: 42px; color: #f1f4f6; margin:0 10px 50px 0;}
 .wrap-6 .col-5 button.btn{background: #fa7c30; border: none; margin-bottom: 125px;}
