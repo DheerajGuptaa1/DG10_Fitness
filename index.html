@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dheeraj Fitness & Healing Center </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/c28b5fb774.js" crossorigin="anonymous"></script>
 
 </head>
@@ -20,11 +20,11 @@
                 <div class="collapse flex align-center">
                     <nav>
                         <ul class="flex">
-                            <li><a class="bold" href="">HOME</a></li>
-                            <li><a class="bold" href="">ABOUT US</a></li>
-                            <li><a class="bold" href="">PAGE</a></li>
-                            <li><a class="bold" href="blogs">BLOGS</a></li>
-                            <li><a class="bold" href="">CONTACT</a></li>
+                            <li><a class="active bold" href="#Home">HOME</a></li>
+                            <li><a class="bold" href="#About">ABOUT US</a></li>
+                            <li><a class="bold" href="#Page">PAGE</a></li>
+                            <li><a class="bold" href="#Blogs">BLOGS</a></li>
+                            <li><a class="bold" href="#Contact">CONTACT</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -61,7 +61,7 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-7">
+                <div class="col-7" id="Home">
                     <h2 class="bold">MAKE YOUR BODY</h2>
                     <h3 class="bold">BEAUTIFULL</h3>
                     <p>Lorem ipsum dolor sit amet.</p>
@@ -114,7 +114,7 @@
     <div class="wrap-2">
         <div class="container">
             <div class="row">
-                <div class="col-5 col-p-12">
+                <div class="col-5 col-p-12" id="About">
                     <h2 class="bold">WELCOME TO  <span>FITNESS</span></h2>
                     <P class="bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat animi nostrum culpa
                        reprehenderit quae, maiores odit maxime ipsum nam unde repellendus quas? Quia veniam
@@ -169,7 +169,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-2 col-p-4"></div>
-                <div class="col-8 col-t-12">
+                <div class="col-8 col-t-12" id="Page">
                     <h2>WE TRAIN WITH</h2>
                     <P class="bold">PERSONAL TRAINERS</P>
                     <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
@@ -220,7 +220,7 @@
 
                 </div>
                 <div class="col-2"></div>
-                <div class="col-5 col-p-12">
+                <div class="col-5 col-p-12" id="Contact">
                     <p class="bold">CALL US AND TRY</p>
                     <h3 class="bold"> 9575474545</h3>
                     <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
@@ -249,7 +249,7 @@
                 placeholder="...Enter Your Gmail..."><button>SUBSCRIBE</button></label>
                 </div>
                 <div class="col-4 col-p-12">
-                <section id="blogs">
+                <section id="Blogs">
                     <h3>BLOGS</h3>
                     <div class="row">
                         <div class="col-5">
@@ -296,9 +296,49 @@
             </footer>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
+/*active navbar with underline*/
+$(function(){
+     $("header nav li a").click(function(e){
+          e.preventDefault();
+          var path=$(this).attr("href");
+          var top=$(path).offset().top;
+          $("header nav li a").removeClass("active");
+          $(this).addClass("active");
+         
+          $("html,body").animate({
+               scrollTop:top-50
+          });
+     });
+})
+
+//removing bg-color of header with scroll
+$(window).scroll(function()
+    {
+        var y=$(this).scrollTop();
+        var vh=$(window).height();
+
+        if(y>=500)
+        {
+            $("header").css({
+                "background-color":" rgba(202, 60, 60,0.7)",
+            })
+        }
+
+        else{
+            $("header").css({
+                "background-color":"transparent",
+            })
+        }       
+
+        $(".wrap-1").css({
+            "background-position-y":"-"+y/8+"px"
+          })
+    });
+
 /*1st Menu in Mobile media screen*/
 $(function()
 {
@@ -372,8 +412,8 @@ $(".signIn").click(function()
     {
         $("body,html").animate(
         {
-            scrollTop:0
-        })
+            scrollTop:0,
+        },1500)
     });
 
     $(window).scroll(function()
