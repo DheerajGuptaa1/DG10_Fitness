@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dheeraj Fitness & Healing Center </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/c28b5fb774.js" crossorigin="anonymous"></script>
 
 </head>
@@ -36,9 +36,9 @@
                 <nav>
                     <button class="btn signIn">LOG IN </button>
                         <div class="signInform">
-                            <form  action="" role="alertdialog">
-                                <button type="button">&times;</button>
-                                <label>Email Id: <input type="text" required></label>
+                            <form action="" role="alertdialog">
+                                <button type="button" class="cross">&times;</button>
+                                <label style="margin-left: 13px;">Email Id: <input type="text" required></label>
                                 <label>Password: <input type="password" required></label>
                                 <button class="btn">Login</button>
                             </form>
@@ -46,15 +46,23 @@
                           
                     <button class="btn signUp">SIGN UP</button>
                         <div class="signUpform">
-                            <form  action="" role="alertdialog">
-                                <button type="button">&times;</button>
-                                <label>Email Id: <input type="text" required></label>
+                            <form action="" role="alertdialog">
+                                <button type="button" class="cross">&times;</button>
+                                <label style="margin-left: 13px;">Email Id: <input type="text" required></label>
                                 <label>Password: <input type="password" required></label>
                                 <button class="btn">Login</button>
                             </form>
                         </div>
 
-                    <a><button class="btn bold">CHOOSE PLAN</button></a>
+                    <a><button class="btn bold c_Plan">CHOOSE PLAN</button></a>
+                    <div class="plan">
+                        <form action="" role="alertdialog">
+                            <button type="button" class="cross">&times;</button>
+                            <label style="margin-left: 13px;">Course-type: <input type="text" required></label>
+                            <label>Batches: <input type="password" required></label>
+                            <button class="btn">Login</button>
+                        </form>
+                    </div>
                 </nav>
             </div>
     </header>
@@ -335,7 +343,7 @@ $(window).scroll(function()
         }       
 
         $(".wrap-1").css({
-            "background-position-y":"-"+y/8+"px"
+            "background-position-y":"-"+y/4+"px"
           })
     });
 
@@ -407,6 +415,24 @@ $(".signIn").click(function()
         }
     });
 
+/*Pop-up Form for C_Plan button */
+$(".c_Plan").click(function()
+{
+        $("body").append('<div class="overlay"></div>');
+        $("body").append('<div class="popover"></div>');
+        $(".popover").append($(".plan").html());
+
+          $(".popover .cross, .overlay").click(function()
+          {
+            $(".overlay,.popover").remove()
+          })
+     })
+
+     $(window).keyup(function(e)
+     {
+      if(e.which==27){ $(".overlay,.popover").remove()} 
+     });
+
     /* Scroll to Top*/
     $(".top").click(function()
     {
@@ -420,7 +446,6 @@ $(".signIn").click(function()
     {
         var y=$(this).scrollTop();
         var vh=$(window).height();
-
         if(y>=500){
             $(".top").fadeIn()
         }
