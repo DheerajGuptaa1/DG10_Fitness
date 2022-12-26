@@ -1,459 +1,259 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dheeraj Fitness & Healing Center </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/c28b5fb774.js" crossorigin="anonymous"></script>
+*{ margin: 0; box-sizing: border-box;}
 
-</head>
-<body>  
-    <div class="wrap-1">
-        <header class="container flex">
-            <div class="col-2">
-                <h1 class="bold">Fitne<span>ss</span></h1>
-            </div>
-            <div class="col-7 col-t-flex">    
-                <button aria-label="1st Mobile_Menu" class="mob"><span></span><span></span><span></span></button>
-                <div class="collapse flex align-center">
-                    <nav>
-                        <ul class="flex">
-                            <li><a class="active bold" href="#Home">HOME</a></li>
-                            <li><a class="bold" href="#About">ABOUT US</a></li>
-                            <li><a class="bold" href="#Page">PAGE</a></li>
-                            <li><a class="bold" href="#Blogs">BLOGS</a></li>
-                            <li><a class="bold" href="#Contact">CONTACT</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            
-        <div class="col-5 col-t-flex"> 
-            <button aria-label="2nd Mobile_Menu" class="mob1"><span></span><span></span><span></span></button>
-            <div class="collapse1 flex align-center">
-                <nav>
-                    <button class="btn signIn">LOG IN </button>
-                        <div class="signInform">
-                            <form action="" role="alertdialog">
-                                <button type="button" class="cross">&times;</button>
-                                <label style="margin-left: 13px;">Email Id: <input type="text" required></label>
-                                <label>Password: <input type="password" required></label>
-                                <button class="btn">Login</button>
-                            </form>
-                        </div>
-                          
-                    <button class="btn signUp">SIGN UP</button>
-                        <div class="signUpform">
-                            <form action="" role="alertdialog">
-                                <button type="button" class="cross">&times;</button>
-                                <label style="margin-left: 13px;">Email Id: <input type="text" required></label>
-                                <label>Password: <input type="password" required></label>
-                                <button class="btn">Login</button>
-                            </form>
-                        </div>
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 0;}
+  
+.row [class^=col] {
+    flex: 1 0 auto;}
+  
+  .row .col-3 {
+    flex-basis: 25%;
+    max-width: 25%;}
+  
+  /* .row .col-4 {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%;
+  } */
+  
+.col-4{
+      flex: 1 0 33.33%;
+      height: 577px;
+      border: 3px solid #666;
+      margin: 0 5px; 
+      padding: 5px 5px;
+      background-image: linear-gradient( 135deg, rgba(255, 0, 0, .6), rgba(0, 255, 0, .6));}
+  
+  .row .col-6 {
+    flex-basis: 50%;
+    max-width: 50%;}
+  
+  .row .col-7{
+      flex-basis: 58.33%;
+      max-width: 58.33%;}
+  
+  .row .col-8 {
+    flex-basis: 66.6666666667%;
+    max-width: 66.6666666667%;}
+  
+  .row .col-12 {
+    flex-basis: 100%;
+    max-width: 100%;}
 
-                    <a><button class="btn bold c_Plan">CHOOSE PLAN</button></a>
-                    <div class="plan">
-                        <form action="" role="alertdialog">
-                            <button type="button" class="cross">&times;</button>
-                            <label style="margin-left: 13px;">Course-type: <input type="text" required></label>
-                            <label>Batches: <input type="password" required></label>
-                            <button class="btn">Login</button>
-                        </form>
-                    </div>
-                </nav>
-            </div>
-    </header>
+  .col-12-1{
+      flex: 1 0 100%;
+      height: 320px;
+      padding: 5px 5px;
+      border: 3px solid #666;
+      background-image: linear-gradient( 135deg, rgba(255, 0, 0, .6), rgba(0, 255, 0, .6));}
+
+
+.container
+    {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+    max-width: 1200px;
+    background-image:url(./Weather-pix/Sunny_bright.jpg);        
+    background-repeat: no-repeat; background-size:cover; z-index: 3;}
+  
+    h1 {font-size: 42px; background: rgba(0, 128, 128, 0.4); text-align: center;}
+
+    h2 span{font-size: 44px;}
+
+    /*Current City's Temp*/
+    .current
+    { display: none;
+      line-height: 36px;
+      padding: 3px 3px;
+      text-align: center;
+      font-size: 32px;
+      border-radius: 5px;
+      background-color: lightblue;
+      box-shadow: 3px 3px 3px 3px rgb(161, 161, 228) inset;
+      text-shadow: 3px 3px 3px goldenrod;
+      color: tomato;}
+
+      .cAQI
+      {display: none;
+        line-height: 36px;
+        padding: 3px 3px;
+        text-align: center;
+        font-size: 32px;
+        border-radius: 5px;
+        background-color: lightblue;
+        box-shadow: 3px 3px 3px 3px rgb(161, 161, 228) inset;
+        text-shadow: 3px 3px 3px goldenrod;
+        color: tomato;}
+      
+    .err2
+    {display: none;
+      line-height: 36px;
+      padding: 7px 7px;
+      text-align: center;
+      font-size: 32px; border-radius: 10px;
+      background-color: lightblue; box-shadow: 6px 6px 6px 6px #00008b inset; text-shadow: 3px 3px 3px goldenrod; color: tomato; margin-left: 182px; }
+          
+    image{vertical-align: bottom;}
+  
+    /*button's layout*/
+
+    .wrap-1 .row span{font-size: 28px;}
+
+input {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 16px 0px 16px 0px;
+  border-bottom: 3px solid #DF8E00;
+  text-align: center;
+  color: #313131;
+  font-size: 30px;
+  font-weight: 300;
+  transition: 0.2s ease-out;
+
+        /* line-height: 34px;
+        padding: 3px 0;
+        text-align: center;
+        font-size: 30px;
+        border-radius: 4px;
+        background-color: lightblue;
+        box-shadow: 3px 3px 3px 3px darkblue inset;
+        text-shadow: 2px 2px 2px rgb(167, 128, 29);
+        color: maroon; */
+}
+
+    .Search {margin: 100px 50px;
+      width: 600px;
+      position: relative; }
+
+    .C{font-size: 28px; color: maroon}
+
+    .cLocation{font-size: 30px; display: inline-block; background-color: darkolivegreen; color: burlywood; margin-top: 5px}
+          
+    .wrap-2 .Search .C{position: relative;}
+
+    .Search .C button{line-height: 32px;
+        padding: 6px 2px;
+        text-align: center;
+        font-size: 25px;
+        background-color: lightblue;
+        border: none;
+        background: transparent;
+        text-shadow: 3px 3px 3px rgb(167, 128, 29);
+        color: maroon;
+        margin-left: -75px;
+        position: absolute;}
+
+    label::first-letter{color: blue;}
+    .fa{position:absolute;}
+
+    /* Search's layout*/
+    .flex{ display: flex; flex-flow: row wrap;}
+    .half1{ flex: 1 0 50%; max-width: 100%; padding: 10px; text-align: left}
+    .half2{ flex: 1 0 50%; max-width: 100%; padding: 10px; text-align: right;}
+    .center{padding: 10px; text-align: left;}
+
+
+    @media screen  and (max-width:1220px){       
+        h2{ font-size: 72px;}
+    }
+  
+    @media screen  and (max-width:980px){   
+         h2{ font-size: 48px;}   
+        .row .col-t-6{flex-basis: 50%;max-width: 50%;}
+        .row .col-t-12{flex-basis: 100%;max-width: 100%;}
+        .row .col-t-hide{ display: none; }
+        .row .col-t-auto{ flex-basis: 20%; max-width: 20%;}
+    }
+
+    @media screen  and (max-width:767px){       
+        .wrap-1 .row span{font-size: 18px; }
+
+        .wrap-1 .row .cLocation i{font-size: 18px;}
+
+        .collapse{ display: none; position: absolute; top: 80px; left: 0; right: 0; background: #000; text-align: right; padding-bottom: 10px !important; }
+        .col-t-flex{ display: flex; justify-content: right; align-items: center; }
+        .mob{ display: block;}
         
-        <div class="container">
-            <div class="row">
-                <div class="col-7" id="Home">
-                    <h2 class="bold">MAKE YOUR BODY</h2>
-                    <h3 class="bold">BEAUTIFULL</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <a href=""><button aria-label="" class="bold btn">GET IN TOUCH</button> </a>
-                </div>
-                <!-- <div class="col-5"></div> -->
-            </div>
-            <div class="box-1">
-                <div class="row">
-                    <div class="col-4 col-p-12">
-                        <img src="./img/img-1.jpg" alt="" width="400" height="auto" >
-                    </div>
-                    <div class="col-8 col-p-12">
-                        <h2 class="bold">FREE 7 DAYS</h2>
-                        <h3 class="bold">ONLINE BOOKING</h3>
-                        <form action="/">
-                            <div class="row">
-                                <div class="col-4 col-p-6">
-                                    <input type="text" required aria-label="No. of people" placeholder="No. of people">
-                                </div>
+        .row .col-m-6{flex-basis: 50%;max-width: 50%;}
+        .row .col-m-12{flex-basis: 100%;max-width: 100%;}
+        h2 span{ font-size: 36px;}
+    }
 
-                                <div class="col-4 col-p-6">
-                                    <input type="date" required aria-label="Date" placeholder="Date">
-                                </div>
-
-                                <div class="col-4 col-p-6">
-                                    <input type="time" required aria-label="Time" placeholder="Preffered Timing">
-                                </div>
-
-                                <div class="col-4 col-p-6">
-                                    <input type="text" required aria-label="Name" placeholder="Persons' Names">
-                                </div>
-                                
-                                <div class="col-4 col-p-6">
-                                    <input type="tel" required aria-label="Phone Number" placeholder="Contact Number Please">
-                                </div>
-                                
-                                <div class="col-4 col-p-6">
-                                    <input type="email" required aria-label="email" placeholder="eMail-ID">
-                                </div>
-                            </div>
-                            <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @media screen  and (max-width:460px){ 
     
-    <div class="wrap-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-5 col-p-12" id="About">
-                    <h2 class="bold">WELCOME TO  <span>FITNESS</span></h2>
-                    <P class="bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat animi nostrum culpa
-                       reprehenderit quae, maiores odit maxime ipsum nam unde repellendus quas? Quia veniam
-                       numquam quas dignissimos autem. Labore, aliquam!</P>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dignissimos nobis ut quidem veritatis
-                       nesciunt voluptatem tempore error ad quas corrupti quia omnis eius facere, excepturi inventore
-                       odit eligendi architecto officia aut distinctio soluta aliquam.</p>   
-                       <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
+    h1 { font-size: 42px;}
+    h2 span{ font-size: 32px;}
+    .row .col-p-4{flex-basis: 33.33%; max-width: 33.33%;}
+    .row .col-p-6{flex-basis: 50%; max-width: 50%;}
+    .row .col-p-12{flex-basis: 100%; max-width: 100%;}
+    .wrap-2 .row .Search{
+        margin-top: 0px;
+        margin-right: 0;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        width: auto;
+        position: relative;}
+        
+.err2
+{
+line-height: 18px;
+padding: 2px 2px;
+text-align: center;
+font-size: 14px;
+border-radius: 2px;
+background-color: lightblue;
+box-shadow: 2px 2px 2px 2px darkblue inset;
+text-shadow: 2px 2px 2px goldenrod;
+color: tomato;
+margin-left: 3px;}
 
-                </div>
-                <div class="col-1"></div>
-                <div class="col-6">
-                    <img src="./img/image.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="wrap-3">
-        <div class="container">
-            <div class="text">
-                <h2 class="bold">WELCOME TO <span>FITNESS</span></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloribus.</p>
-            </div>
-            <div class="row">
-                <div class="col-4 col-t-4 col-p-12">
-                    <img src="./img/img-2.jpg" alt="">
-                    <h3 class="bold">Basic crossfit</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, officia.
-                        Officiis id rem beatae? Nobis cumque sit consectetur possimus vitae!</p>
-                    <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
-                </div>
+.C {font-size: 18px;}
 
-                <div class="col-4 col-t-6 col-p-12">
-                    <img src="./img/img-3.jpg" alt="">
-                    <h3 class="bold">Fitness studio</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, officia.
-                        Officiis id rem beatae? Nobis cumque sit consectetur possimus vitae!</p>
-                    <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
-                </div>
-
-                <div class="col-4 col-t-6 col-p-12">
-                    <img src="./img/img-4.jpg" alt="">
-                    <h3 class="bold">Yoga classes</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, officia.
-                         Officiis id rem beatae? Nobis cumque sit consectetur possimus vitae!</p>
-                    <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="wrap-4"> 
-        <div class="container">
-            <div class="row">
-                <div class="col-2 col-p-4"></div>
-                <div class="col-8 col-t-12" id="Page">
-                    <h2>WE TRAIN WITH</h2>
-                    <P class="bold">PERSONAL TRAINERS</P>
-                    <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
-                </div>
-                <div class="col-2 col-p-4"></div>
-            </div>
-        </div>
-    </div>
-    <div class="wrap-5">
-        <div class="container">
-            <h2 class="bold">EXPERT <span>TRAINERS</span></h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, fugit.</p>
-            <div class="row">
-                <div class="col-4 col-t-6 col-p-12">
-                    <img src="./img/img-5.png" alt="">
-                    <h2 class="bold">MANISHA SINGH</h2>
-                    <h3 class="bold">SPINNING TRAINER</h3>
-                    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque enim inventore,
-                         ut cupiditate vero nemo alias distinctio maiores illo eius?</P>
-                </div>
-
-                <div class="col-4 col-t-6 col-p-12">
-                    <img src="./img/img-6.png" alt="">
-                    <h2 class="bold">DHEERENDRA</h2>
-                    <h3 class="bold">OVERALL DIET</h3>
-                    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque enim inventore,
-                         ut cupiditate vero nemo alias distinctio maiores illo eius?</P>
-                </div>
-
-                <div class="col-4 col-t-6 col-p-12">
-                    <img src="./img/img-7.png" alt="">
-                    <h2 class="bold">BABA SATYENDRA</h2>
-                    <h3 class="bold">BODY BUILDING TRAINER</h3>
-                    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque enim inventore,
-                         ut cupiditate vero nemo alias distinctio maiores illo eius?</P>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="wrap-6">
-        <div class="container">
-            <div class="row">
-                <div class="col-5 col-p-12">
-                    <p class="bold">TRY FOR FREE</p>
-                    <h3>FREE 5 DAYS PASS</h3>
-                    <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
-
-                </div>
-                <div class="col-2"></div>
-                <div class="col-5 col-p-12" id="Contact">
-                    <p class="bold">CALL US AND TRY</p>
-                    <h3 class="bold"> 9575474545</h3>
-                    <a href=""><button class="bold btn">GET IN TOUCH</button> </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="wrap-7">
-        <div class="container">
-            <div class="row">
-                <div class="col-5 col-p-12">
-                    <h2>FITNE<span>SS</span></h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rerum cumque odio
-                        maxime iusto ex inventore id at consequatur, amet sunt illum, sequi nemo error,
-                        eaque earum quasi fugit debitis quod non laboriosam modi omnis! Voluptatibus et
-                         quod officia mollitia.</p>
-                     <p class="icon">Follow us:
-                        <i class="pad fa-brands fa-facebook-f"></i>
-                        <i class=" pad fa-brands fa-twitter" style="color: #fa7c30;"></i>
-                        <i class=" pad fa-brands fa-instagram"></i>
-                        <i class=" pad fa-brands fa-pinterest-p"></i>
-                        <i class=" pad fa-brands fa-google-plus-g"></i>
-                        <i class=" pad fa-brands fa-youtube"></i>
-                     </p>    
-                        <label for="subscribe"><input type="mail" required aria-label="gmail" 
-                placeholder="...Enter Your Gmail..."><button>SUBSCRIBE</button></label>
-                </div>
-                <div class="col-4 col-p-12">
-                <section id="Blogs">
-                    <h3>BLOGS</h3>
-                    <div class="row">
-                        <div class="col-5">
-                            <img src="./img/img-8.jpg" alt="">
-                        </div>
-                        <div class="col-7">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                        </div>
-                        <div class="col-5">
-                            <img src="./img/img-9.jpg" alt="">
-                        </div>
-                        <div class="col-7">
-                          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                        <div class="col-5">
-                            <img src="./img/img-10.jpg" alt="">
-                        </div>
-                        <div class="col-7">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                    </div>
-                </section>
-                </div>
-
-                <div class="col-3 col-p-12">
-                    <h3>INSTAGRAM</h3>
-                    <div class="row">
-                        <div class="col-4 col-p-6"><img src="./img/img-11.jpg" alt=""> </div>
-                        <div class="col-4 col-p-6"><img src="./img/img-12.jpg" alt=""></div>
-                        <div class="col-4 col-p-6"> <img src="./img/img-13.jpg" alt=""></div>
-                        <div class="col-4 col-p-6"><img src="./img/img-14.jpg" alt=""></div>
-                        <div class="col-4 col-p-6"><img src="./img/img-15.jpg" alt=""></div>
-                        <div class="col-4 col-p-6"><img src="./img/img-16.jpg" alt=""></div>
-                        <div class="col-4 col-p-6"><img src="./img/img-17.jpg" alt=""></div>
-                        <div class="col-4 col-p-6"><img src="./img/img-18.jpg" alt=""></div>
-                        <div class="col-4 col-p-6"><img class="last" src="./img/img-19.jpg" alt=""></div>
-                    </div>
-                </div>
-            </div>
+.Search .C input{
+  line-height: 32px;
+  padding: 1px 1px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 2px;
+            background-color: lightblue;
+            box-shadow: 3px 3px 3px 3px darkblue inset;
+            text-shadow: 2px 2px 2px rgb(167, 128, 29);
+            color: maroon;
+            position: relative;}
             
-            <footer>
-                <p>&copy;DG10 in 2022</p>
-                <button class="btn top">Go To Top</button>
-            </footer>
-        </div>
-    </div>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+          .cLocation{font-size: 19px; display: inline-block; background-color: darkolivegreen; color: burlywood;}
 
-<script>
-/*active navbar with underline*/
-$(function(){
-     $("header nav li a").click(function(e){
-          e.preventDefault();
-          var path=$(this).attr("href");
-          var top=$(path).offset().top;
-          $("header nav li a").removeClass("active");
-          $(this).addClass("active");
-         
-          $("html,body").animate({
-               scrollTop:top-50
-          });
-     });
-})
+        .Search .C button{line-height: 22px;
+            padding: 2px 2px;
+            text-align: left;
+            font-size: 20px;
+            background-color: lightblue;
+            border: none;
+            background: transparent;
+            text-shadow: 3px 3px 3px rgb(167, 128, 29);
+            color: maroon;
+            position: absolute;
+            right: 25px;
+            bottom: -3px;}
 
-//removing bg-color of header with scroll
-$(window).scroll(function()
-    {
-        var y=$(this).scrollTop();
-        var vh=$(window).height();
-
-        if(y>=500)
-        {
-            $("header").css({
-                "background-color":" rgba(202, 60, 60,0.7)",
-            })
-        }
-
-        else{
-            $("header").css({
-                "background-color":"transparent",
-            })
-        }       
-
-        $(".wrap-1").css({
-            "background-position-y":"-"+y/4+"px"
-          })
-    });
-
-/*1st Menu in Mobile media screen*/
-$(function()
-{
-    $(".mob").click(function()
-    {
-        $(".collapse1").slideUp(".mob1");
-        $(".collapse").slideToggle();
-        $(this).toggleClass("active");
-    })
-});
-
-/*2nd Menu in Mobile media screen*/
-$(function()
-{
-    $(".mob1").click(function()
-    {
-        $(".collapse").slideUp(".mob");
-        $(".collapse1").slideToggle();
-        $(this).toggleClass("active");
-    })
-});
-
-/*Pop-up Form for Sign-in button */
-$(".signIn").click(function()
-    {
-        $("body").append('<div class="model"></div>');
-        $("body").append('<div class="popover"></div>');
-        var form=$(".signInform").html();
-        $(".popover").append(form);
-        $(".popover form").fadeIn(0);
-
-        $(".popover button[type='button'], .model").click(closeLogin);
-
-        $(window).keyup(function(e)
-        {
-            if( e.which==27)
-            { closeLogin()}
-        })
-
-        function closeLogin()
-        {
-            $(".popover, .model").remove();
-        }
-    });
-
-    /*Pop-up Form for Sign-up button */
-    $(".signUp").click(function()
-    {
-        $("body").append('<div class="model"></div>');
-        $("body").append('<div class="popover"></div>');
-        var form=$(".signUpform").html();
-        $(".popover").append(form);
-        $(".popover form").fadeIn(0);
-
-        $(".popover button[type='button'], .model").click(closeLogin);
-
-        $(window).keyup(function(e)
-        {
-            if( e.which==27)
-            { closeLogin()}
-        })
-
-        function closeLogin()
-        {
-            $(".popover, .model").remove();
-        }
-    });
-
-/*Pop-up Form for C_Plan button */
-$(".c_Plan").click(function()
-{
-        $("body").append('<div class="overlay"></div>');
-        $("body").append('<div class="popover"></div>');
-        $(".popover").append($(".plan").html());
-
-          $(".popover .cross, .overlay").click(function()
-          {
-            $(".overlay,.popover").remove()
-          })
-     })
-
-     $(window).keyup(function(e)
-     {
-      if(e.which==27){ $(".overlay,.popover").remove()} 
-     });
-
-    /* Scroll to Top*/
-    $(".top").click(function()
-    {
-        $("body,html").animate(
-        {
-            scrollTop:0,
-        },1500)
-    });
-
-    $(window).scroll(function()
-    {
-        var y=$(this).scrollTop();
-        var vh=$(window).height();
-        if(y>=500){
-            $(".top").fadeIn()
-        }
-        else{
-            $(".top").fadeOut()
-        }       
-    });
-
-</script>
-</body>
-</html>
+            .Search .C span{line-height: 22px;
+                padding: 2px 2px;
+                text-align: left;
+                font-size: 18px;
+                background-color: lightblue;
+                border: none;
+                background: transparent;
+                text-shadow: 3px 3px 3px rgb(167, 128, 29);
+                color: maroon;
+                position: absolute;
+                right: 10px;
+                bottom: 66px;}
+    }
