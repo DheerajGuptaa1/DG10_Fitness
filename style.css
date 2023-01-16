@@ -1,10 +1,14 @@
-*,::before,::after{ margin: 0; box-sizing: border-box;}
+*,html,::before,::after{ margin: 0; box-sizing: border-box;
+    outline: 0 !important;
+    scroll-behavior: smooth;}
+
 a{ text-decoration: none;}
 ul{ list-style: none; padding: 0;}
 button{ padding: 0; cursor: pointer;}
 :disabled{ cursor: not-allowed;}
 img{ max-width: 100%; height: auto; vertical-align: bottom;}
 iframe{ border: none;}
+
 
 @font-face {
     font-family: open-sans;
@@ -108,7 +112,7 @@ body{ font-family: open-sans;
     .flex{ display: flex; justify-content: space-between;}
     .align-center{ align-items: center;}
 
-    .wrap-1{ background: url(../img/bg-1.jpg) no-repeat center center/cover; position: relative; background-attachment: fixed;transition: 300ms;}
+    .wrap-1{ background: url(../img/bg-1.jpg) no-repeat center center/cover; position: relative; background-attachment: fixed; transition: 300ms;}
     .wrap-1 h1.bold{ font-size: 24px; line-height: 40px; color: #fff; margin: 20px 15px;}
     .wrap-1 h1 span{ color: #fa7c30;}
    .wrap-1 .flex {justify-content: space-between;}
@@ -116,7 +120,8 @@ body{ font-family: open-sans;
     nav ul li{ margin-right: 10px;  }
     nav ul li a{ color: white; display: block; padding: 8px 12px; border-bottom: 2px solid transparent; }
     nav ul li a.active{ border-bottom-color: #fff; color: lightcoral;}
-    nav ul li a:hover{background-color: darkolivegreen;}
+    nav ul li a:hover{background-color: #fa7c30;}
+  
     .wrap-1 header{background-color: rgba(202, 60, 60,0.7); position: fixed; top: 0px; left: 0; right: 0; z-index: 100;}
     .wrap-1 header nav{ margin: 20px 15px;}
     .wrap-1 header .nav{ margin: 30px 20px; margin-left: 0;}
@@ -124,7 +129,7 @@ body{ font-family: open-sans;
 
     .btn{width: auto;
         height: 30px;
-        background: brown;
+        background: #fa7c30;
         color: #fff;
         border-radius: 5px;
         text-align: center;
@@ -150,15 +155,13 @@ body{ font-family: open-sans;
     .wrap-1 .box-1 .col-8 .btn{ color: #fff;  background: #fa7c30; border: none; margin-top: 75px;}
 
     .mob{ width: 60px; height: 35px; border:  2px solid; color: #e9d8d8; background: transparent; border-radius: 10px; font: 400 16px proxima, sans-serif; display: none; }
-    .mob span{ display: block; width: 48px; height: 2px; background: #f8e9e9; margin: 5px auto; }
-    .mob span{ transform-origin: right center; transition: 0.5s; }
+    .mob span{ display: block; width: 48px; height: 2px; background: #f8e9e9; margin: 5px auto; transform-origin: right center; transition: 0.5s; }
     .mob.active span:nth-child(1){ transform: rotate(-18deg);}
     .mob.active span:nth-child(2){ opacity: 0; }
     .mob.active span:nth-child(3){ transform: rotate(18deg)}
 
     .mob1{ width: 60px; height: 35px; border:  2px solid; color: #e9cdcd; background: transparent; border-radius: 10px; font: 400 16px proxima, sans-serif; display: none; }
-    .mob1 span{ display: block; width: 48px; height: 2px; background: #edd9d9; margin: 5px auto; }
-    .mob1 span{ transform-origin: right center; transition: 0.5s; }
+    .mob1 span{ display: block; width: 48px; height: 2px; background: #edd9d9; margin: 5px auto; transform-origin: right center; transition: 0.5s; }
     .mob1.active span:nth-child(1){ transform: rotate(-18deg);}
     .mob1.active span:nth-child(2){ opacity: 0; }
     .mob1.active span:nth-child(3){ transform: rotate(18deg)}
@@ -241,11 +244,48 @@ body{ font-family: open-sans;
 
 .wrap-7 footer p{text-align: center; color: #fa7c30; padding: 40px 0 20px;font-size: 14px; line-height: 30px;}
 
-.top{ position: fixed; right: 5px; bottom: 5px;}
+.top{position: relative;
+    top: 0;
+    display: block;}
+
+.top.active a{opacity: 1;
+        top: 90%;}
+
+.top a{ border-radius: 50%;
+position: fixed;
+bottom: 20px;
+right: 20px;
+border: 2px solid #fecc2f;
+background-color: #fe902f;
+width: 40px;
+height: 40px;
+line-height: 36px;
+text-align: center;
+font-size: 24px;
+z-index: 100;
+color: #fff;
+top: 0;
+opacity: 0;
+transition: all .8s linear 0s;}
+
+.top a::after{
+    border-radius: 50%;
+z-index: -1;
+content: "";
+position: absolute;
+left: -2px;
+top: -2px;
+width: 40px;
+height: 40px;
+animation: ripple 1.6s ease-out infinite;
+opacity: 1;
+background: #2c62de;
+}
+
+@keyframes ripple{0%{transform:scale(0);opacity:1}100%{transform:scale(1.5);opacity:0}};
 
 @media screen  and (max-width:1220px){       
     h2{ font-size: 62px;}
-    .icon{ right: 0;}
 }
 
 @media screen  and (max-width:980px){   
@@ -261,7 +301,6 @@ body{ font-family: open-sans;
      .row .col-t-4{flex-basis: 33.33%; max-width: 33.33%;}
     .row .col-t-6{flex-basis: 50%;max-width: 50%;}
     .row .col-t-12{flex-basis: 100%;max-width: 100%;}
-    .icon{ top: 160px;}
     .row .col-t-hide{ display: none; }
     .row .col-t-auto{ flex-basis: 20%; max-width: 20%;}
     .box{ line-height: 50px;}
@@ -280,15 +319,10 @@ body{ font-family: open-sans;
         line-height: 20px;
         border: 1px solid #fff;}
 
-    .mob1{ display: block;}
-    .mob1 nav .btn{display: block; flex-direction: column;}
-    .mob1 nav .btn { line-height: 20px; border: 1px solid #fff;}
-
     .row .col-t-4{flex-basis: 33.33%; max-width: 33.33%;}
     .row .col-m-6{flex-basis: 50%;max-width: 50%;}
     .row .col-m-12{flex-basis: 100%;max-width: 100%;}
     
-    .icon{ top: 60px;}
     .box{ font-size: 16px; margin-bottom: 10px;}
     h2{ font-size: 54px;}
     h3{font-size: 46px;}
@@ -297,13 +331,13 @@ body{ font-family: open-sans;
 @media screen  and (max-width:460px){ 
     h2{ font-size: 46px;}
     h3{font-size: 38px;}
+ 
+    .wrap-1{ background: url(../img/bg-11.jpg) no-repeat center center/cover; position: relative; background-attachment: fixed; transition: 300ms;}
     
     .wrap-1 .col-7 h2.bold{ font-size: 54px; color: #fff; margin-top: 160px;} 
     .wrap-1 .col-7 h3.bold{ font-size: 48px; color: #fa7c30;}
 
-    .collapse{ display: none; position: absolute; top: 62px; left: 0; right: 0; background: transparent; text-align: right; padding-bottom: 0px !important; }
-
-    .wrap-4{background-position: center;}
+    .wrap-4{ background: url(../img/bg-21.jpg) no-repeat center center/cover;}
     
     .wrap-7 .col-5 label input{width: 100%;}
     .wrap-7 .col-5 label button{width: 100%; align-items: center;}
