@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dheeraj Fitness & Healing Center </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/c28b5fb774.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 </head>
 <body>  
@@ -300,30 +300,39 @@
             
             <footer>
                 <p>&copy;DG10 in 2022</p>
-                <button class="btn top">Go To Top</button>
+                <div class="top active">
+                    <a href="#Home">
+                        <i class="fa-solid fa-angles-up"></i>
+                    </a>
+                </div>
             </footer>
         </div>
     </div>
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- <script src="../Fitness/tip-tOp.js"></script> -->
 
 <script>
 /*active navbar with underline*/
-$(function(){
-     $("header nav li a").click(function(e){
-          e.preventDefault();
-          var path=$(this).attr("href");
-          var top=$(path).offset().top;
-          $("header nav li a").removeClass("active");
-          $(this).addClass("active");
-         
-          $("html,body").animate({
-               scrollTop:top-50
-          });
+$(function()
+{
+     $("header nav li a").click(function(e)
+     {
+        e.preventDefault();
+        var path=$(this).attr("href");
+        var top=$(path).offset().top;
+        $("header nav li a").removeClass("active");
+        $(this).addClass("active");
+       
+        $("html,body")
+        .animate(
+        {
+           scrollTop:top-50
+        });
      });
 })
 
-//removing bg-color of header with scroll
+/*removing bg-color of header with scroll*/
 $(window).scroll(function()
     {
         var y=$(this).scrollTop();
@@ -331,12 +340,16 @@ $(window).scroll(function()
 
         if(y>=500)
         {
+            $(".top").fadeIn()
+
             $("header").css({
-                "background-color":" rgba(202, 60, 60,0.7)",
+                "background-color": "rgba(202, 60, 60,0.7)",
             })
         }
 
         else{
+            $(".top").fadeOut()
+
             $("header").css({
                 "background-color":"transparent",
             })
@@ -436,25 +449,12 @@ $(".c_Plan").click(function()
     /* Scroll to Top*/
     $(".top").click(function()
     {
-        $("body,html").animate(
-        {
-            scrollTop:0,
-        },1500)
+        $('html,body').animate
+        ({
+            scrollTop: 0
+        }, 700);
+        return false;
     });
-
-    $(window).scroll(function()
-    {
-        var y=$(this).scrollTop();
-        var vh=$(window).height();
-
-        if(y>=500){
-            $(".top").fadeIn()
-        }
-        else{
-            $(".top").fadeOut()
-        }       
-    });
-
 </script>
 </body>
 </html>
